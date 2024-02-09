@@ -78,7 +78,7 @@ jobs:
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Use secret key in Next.js build
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build --NEXT_PUBLIC_PRIVATE_KEY=${{ process.env.NEXT_PUBLIC_PRIVATE_KEY }}
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build --NEXT_PUBLIC_PRIVATE_KEY=${{ secrets.NEXT_PUBLIC_PRIVATE_KEY }}
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
